@@ -11,6 +11,7 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
+                        sh "ls -l"  // List the files to confirm the directory is not empty
                         sh "terraform init"
                         sh "terraform apply -auto-approve"
                     }
